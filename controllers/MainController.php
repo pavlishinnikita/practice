@@ -26,12 +26,6 @@ class MainController
     public static function connect()
     {
         $link = new PDO('mysql:host='.MYSQL_SERVER.';dbname='.MYSQL_DB, MYSQL_USER, MYSQL_PASSWORD);
-        //$link = mysqli_connect(MYSQL_SERVER, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB)
-        //or die("Error: ".mysqli_error($link));
-        /*if(!mysqli_set_charset($link, "utf8")){
-            printf("Error: ".mysqli_error($link));
-        }*/
-        $db = $link;
         return $link;
     }
     public function index()
@@ -41,6 +35,7 @@ class MainController
     }
     public function weather()
     {
+        // тут сначала проверить уже существующую базу, а дальше делать все остальное
         $link = self::connect();
         // здесь мы каким-то образом используем соединение
         $sth = $link->query('SELECT * FROM test');
@@ -51,13 +46,12 @@ class MainController
         $model = new WeatherModel();
         $request_arr = json_decode(file_get_contents('testForcast.json'));
         $model->setCity($request_arr->city->name);
-        echo "<br>";
-        foreach ($request_arr->list as $item){
+        print_r($request_arr);
+        //echo "<br>";
+        /*foreach ($request_arr->list as $item){
             print_r($item->main);
             echo "<br>";
-        }
-        //print_r($request_arr->list[0]->main);
-        //print_r($request_arr->weather);
+        }*/
         include 'views/weather.php';
     }
 
