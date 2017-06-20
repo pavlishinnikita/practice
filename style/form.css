@@ -1,8 +1,7 @@
 form{
     -moz-user-select: none;
     margin:auto;
-    /*background: gray;*/
-    background: url("../img/fon1.png");
+    background: gray;
     width: 50%;
 }
 
@@ -22,6 +21,7 @@ input[type='submit']:hover{
     background: blue;
 }
 .etCustom{
+    display: block;
     outline: none;
     border: solid 2px blue;
     border-radius: 5px;
@@ -29,22 +29,34 @@ input[type='submit']:hover{
     -moz-border-radius: 5px;
     -khtml-border-radius: 5px;
 }
+.etCustomError{
+    display: block;
+    outline: none;
+    border: solid 2px red;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+.label-error{
+    display: inline;
+    float: right;
+    color: red;
+}
 label{
     /*border: none;*/
+    float: left;
 }
 @media screen and (min-width:980px) /*desktop*/ {
     form{
-        /*background: red;*/
+        -moz-user-select: none;
+        margin:auto;
+        width: 30%;
     }
 }
 @media screen and (max-width: 979px) /*tablet*/ {
-    form{
-        /*background: blue;*/
-    }
 }
 @media screen and (max-width: 500px) /*mobile*/{
-    form{
-        /*background: green;*/
-    }
+
 }
 

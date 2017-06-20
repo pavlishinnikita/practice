@@ -1,0 +1,14 @@
+#map {
+    height: 400px;
+    width: 400px;
+}
+.item{
+    display: inline-block;
+    background: rgba(0, 30, 255, 0.5);
+    /*padding-bottom: 5%;*/
+    margin-bottom: 5%;
+    width: 30%;
+}
+.item > img{
+    float: right;
+}
