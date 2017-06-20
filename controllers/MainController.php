@@ -44,9 +44,7 @@ class MainController
             $this->lat = $megaReq[0]['lat'];
             // отдаем виду данные + говорим, что они из
         }else {
-            // делаем запрос
             $str = file_get_contents("http://api.openweathermap.org/data/2.5/forecast/daily?q=".$city."&mode=json&units=".$deg."&appid=".$this->WEATHER_API_KEY."&cnt=5");
-            // отдаем виду данные, предварительно записав в базу
             $request_arr = json_decode($str);
             $this->lon = $request_arr->city->coord->lon;
             $this->lat = $request_arr->city->coord->lat;
