@@ -5,7 +5,7 @@ require_once 'autoload.php';
 if (isset($_GET['action'])) {
     $a = $_GET['action'];
 }else{
-    $a = $_GET['action']? : "index"; // тернартый оператор $var = condition ? exp1 : exp2;
+    $a = $_GET['action']? : "index";
 }
 if(isset($_GET['cont'])){
     $c = ucfirst($_GET['cont']);

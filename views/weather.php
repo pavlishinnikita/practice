@@ -18,8 +18,8 @@
     <?php
     foreach ($this->model as $item){ ?>
         <div class="item">
-            <img src="<?="http://openweathermap.org/img/w/".((object)$item)->icon.".png";?>" alt="">
-            <span><strong><?=((object)$item)->main;?></strong></span>
+            <img src="<?="http://openweathermap.org/img/w/".((object)$item)->icon.".png";?>" alt="weather icon here">
+            <span><strong><?=((object)$item)->main;?></strong></span> <!-- неверное и ненужное преобразование в объект -->
             <p><?=((object)$item)->description;?></p>
             <span>Country: </span>
             <span><?=((object)$item)->country.", ".((object)$item)->city;?></span>
